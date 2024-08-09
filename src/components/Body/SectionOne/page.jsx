@@ -7,6 +7,7 @@ export default function page() {
   const [flag, setFlag] = useState(false);
   const showRef = useRef();
   const clickRef = useRef();
+  const mydrag = useRef();
 
   function mouseD(e) {
     console.log(e.target);
@@ -20,52 +21,17 @@ export default function page() {
 
     showRef.current.addEventListener("mousemove", handleMouseMove);
 
-    // const handleMouseUp = () => {
-    // showRef.current.removeEventListener("mousemove", handleMouseMove);
-    // showRef.current.removeEventListener("mouseup", handleMouseUp);
-    // };
-
-    // showRef.current.addEventListener("mouseup", handleMouseUp);
   }
   const [move, setMove] = useState(0);
   const moveRef = useRef();
-  // function funMove(e) {
-  //   if (e.target.id === "ok") {
-  //     const boxWidth = 300;
-  //     const elementWidth = 60;
-  //     const handleMouseMove = (event) => {
-  //       // console.log(event.offsetX)
-
-  //       setMove((prevMove) => {
-  //         const newMove = prevMove + -event.movementX;
-  //         return Math.max(0, Math.min(newMove, boxWidth - elementWidth));
-  //       });
-  //       // console.log(event.offsetX)
-  //       // console.log(event.pageX)
-  //     };
-
-  //     const handleMouseUp = (e) => {
-  //       console.log(e.offsetX);
-  //       if (e.offsetX < 90) {
-  //         console.log("O");
-  //         setBox(0);
-  //       }
-
-  //       moveRef.current.removeEventListener("mousemove", handleMouseMove);
-  //       moveRef.current.removeEventListener("mouseup", handleMouseUp);
-  //     };
-
-  //     moveRef.current.addEventListener("mousemove", handleMouseMove);
-  //     moveRef.current.addEventListener("mouseup", (e) => handleMouseUp(e));
-  //   }
-  // }
 
 
   return (
-    <>
+    <>    
       <div className="w-full max-w-[942px] h-[764px] mx-auto ">
+
         <div className="w-full flex justify-center mt-[50px]">
-          <span className="text-[14px] font-[500] text-[#354150]">
+          <span className="text-[14px]  font-bold text-[#354150]">
             به سادگی فرم بسازی
           </span>
         </div>
@@ -104,8 +70,8 @@ export default function page() {
             </button>
           </div>
 
-          <div className="w-[616px] h-[311px] absolute top-[150px] rounded-[8px] bg-[#F7F8FA] ">
-            <div className="p-[10px] flex justify-between">
+          <div className="w-[616px] h-[311px] absolute top-[150px] rounded-[8px] flex py-[15px] flex-col justify-between bg-[#F7F8FA] ">
+            <div className="px-[10px] flex justify-between">
               <div></div>
 
               {/* ################ */}
@@ -122,42 +88,51 @@ export default function page() {
               </div>
             </div>
             {/* ********************** */}
-            <div className="w-full flex justify-between pl-[24px] pr-[30px]">
+          
+
+
+
+
+            <div className="w-full flex justify-between pl-[24px] pr-[30px] " >
+              <div className=" absolute z-50 top-[0px] right-[-70px]" >
+              <button className="w-[153px] py-[12px] px-[17px] h-[48px]  rounded-[15px] bg-[#354150] text-[14px] text-[#fff] ">بکشید و رها کنید ✨</button>
+              <Image className="absolute left-[-50px]" width={36} height={40} src={"/gif/IMAGE2.gif"} alt="Opss" draggable={false}/>
+              </div>
+
+              {/* <button className="w-[153px] h-[48px] bg-[#354150]"></button> */}
               <div className="w-[151px] h-[212px] p-[15px] bg-[#fff] rounded-[15px] relative">
-                <ul className="flex flex-wrap ">
-                  <li className="w-[60px] h-[60px] rounded-tr-[15px] border"></li>
+                <ul className="flex flex-wrap relative">
+                  <li className="w-[60px]  h-[60px] rounded-tr-[15px] bg-iconF6 bg-no-repeat bg-center border"></li>
+                  <li className="w-[60px] h-[60px] ">
 
-                  {/* <li
-                    id="mov"
-                    className="w-[350px] h-[60px] absolute right-[75px] bg-red-700"
-                    ref={showRef}
-                  >
-                    <div
-                      className="w-[60px] h-[60px] rounded-[15px] absolute  bg-[#354150]"
-                      onMouseDown={(e) => mouseD(e)}
-                      ref={clickRef}
-                      style={{ left: box }}
-                    ></div>
-                  </li> */}
-                  {/* <li
-                    className="w-[60px] h-[60px] rounded-[15px] absolute  bg-[#354150]"
-                    style={{ left: xy }}
-                    ref={showRef}
-                    onMouseDown={(e)=>showVal(e)}
-                  ></li> */}
+                  <div id="draged" className="w-[60px] bg-iconF3 bg-no-repeat bg-center bg-[#354150] z-50  h-[60px] cursor-move rounded-[15px] border" draggable={true} ref={mydrag} 
+                  onDrag={(e)=>{
+                    e.dataTransfer.setData('box', mydrag);
+                  }}
+                  ></div>
+                  </li>
 
-                  <li className=" w-[60px] h-[60px]"></li>
-                  <li className="w-[60px] h-[60px] border"></li>
-                  <li className="w-[60px] h-[60px] border"></li>
-                  <li className="w-[60px] h-[60px] rounded-br-[15px] border"></li>
-                  <li className="w-[60px] h-[60px] rounded-bl-[15px] border"></li>
+
+                  {/* <li className=" w-[60px] h-[60px]"></li> */}
+                  <li className="w-[60px] h-[60px] bg-iconF1 bg-no-repeat bg-center border"></li>
+                  <li className="w-[60px] h-[60px] bg-iconF4 bg-no-repeat bg-center border"></li>
+                  <li className="w-[60px] h-[60px] bg-iconF5 bg-no-repeat bg-center rounded-br-[15px] border"></li>
+                  <li className="w-[60px] h-[60px] bg-iconF2 bg-no-repeat bg-center rounded-bl-[15px] border"></li>
                 </ul>
               </div>
-              <div className="w-[385px] py-[25px] px-[20px] h-[212px] bg-[#fff] rounded-[15px]">
-                <div className="w-[342px] h-[58px] flex justify-center items-center rounded-[15px] border-[1px] border-[#979797] border-dashed">
-                  <p className="text-[11px] text-[#979797]">
-                    فرم خود را بسازید
-                  </p>
+              <div className="w-[385px] py-[25px] px-[20px] h-[212px] bg-[#fff] rounded-[15px]" 
+
+              >
+                <div
+                onDragOver={(e)=>{e.preventDefault()}}
+                onDrop={(e)=>{
+                  e.dataTransfer.getData('box')
+                  e.target.append(mydrag.current)
+                }}
+                
+                className="w-[342px] h-[58px] flex justify-center relative before:absolute before:content-['فرم_خود_را_بسازید'] items-center rounded-[15px] border-[1px] border-[#979797] border-dashed">
+                  {/* <div className="text-[11px] text-[#979797]  "></div> */}
+                    
                 </div>
               </div>
             </div>

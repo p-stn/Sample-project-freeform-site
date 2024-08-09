@@ -32,7 +32,7 @@ export default function page() {
   
 
   return (
-    <div className="w-full max-w-[1112px] mx-auto h-[90px] px-[30px] py-[26.5px] bg-[#fff] duration-500  top-0 left-0 right-0 z-[999] flex justify-between items-center border-b"
+    <div className="w-full  mx-auto h-[90px] px-[30px] py-[26.5px] bg-[#fff] duration-500  top-0 left-0 right-0 z-[999] flex justify-between items-center border-b"
     ref={getloc}
     >
       <div>

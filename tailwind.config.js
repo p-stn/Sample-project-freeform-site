@@ -23,6 +23,12 @@ module.exports = {
         'desktopTabPic':'url("/img/item/desktopTabPic.png")',
         'domainTabPic':'url("/img/item/domainTabPic.png")',
         'tabDeletePic':'url("/img/item/tabDeletePic.png")',
+        'iconF1':'url("/icon/iconFoorm/iconF1.svg")',                
+        'iconF2':'url("/icon/iconFoorm/iconF2.svg")',                
+        'iconF3':'url("/icon/iconFoorm/iconF3.svg")',                
+        'iconF4':'url("/icon/iconFoorm/iconF4.svg")',                
+        'iconF5':'url("/icon/iconFoorm/iconF5.svg")',                
+        'iconF6':'url("/icon/iconFoorm/iconF6.svg")',                
         
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
