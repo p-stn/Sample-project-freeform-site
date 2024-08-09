@@ -59,7 +59,7 @@ export default function page() {
         </div>
         <div className='w-full h-[342px] bg-no-repeat flex justify-center relative mt-[50px]  bg-[url("/img/img-Head.png")]'>
           <div className="w-[435px] flex items-center justify-between h-[80px] absolute top-[-20px] bg-[#fff] rounded-b-[15px] p-[10px]">
-            <Image width={18} height={20} src="icon/createP.svg" alt="Opss" />
+            <Image width={24} height={24} src="icon/createP.svg" alt="Opss" />
             <input
               className="outline-none text-[#979797] "
               placeholder="نام پروژه خود را وارد کنید..."
@@ -70,8 +70,8 @@ export default function page() {
             </button>
           </div>
 
-          <div className="w-[616px] h-[311px] absolute top-[150px] rounded-[8px] flex py-[15px] flex-col justify-between bg-[#F7F8FA] ">
-            <div className="px-[10px] flex justify-between">
+          <div className="w-[616px] h-[311px] absolute bg-green-400 top-[150px] rounded-[8px] flex py-[15px] flex-col justify-between bg-[#F7F8FA] ">
+            <div className="px-[10px] flex  justify-between">
               <div></div>
 
               {/* ################ */}
@@ -105,7 +105,7 @@ export default function page() {
                   <li className="w-[60px]  h-[60px] rounded-tr-[15px] bg-iconF6 bg-no-repeat bg-center border"></li>
                   <li className="w-[60px] h-[60px] ">
 
-                  <div id="draged" className="w-[60px] bg-iconF3 bg-no-repeat bg-center bg-[#354150] z-50  h-[60px] cursor-move rounded-[15px] border" draggable={true} ref={mydrag} 
+                  <div id="draged" className="w-[60px] transition-all	 bg-iconF3 bg-no-repeat bg-center bg-[#354150] z-50  h-[60px] cursor-move rounded-[15px] border" draggable={true} ref={mydrag} 
                   onDrag={(e)=>{
                     e.dataTransfer.setData('box', mydrag);
                   }}
