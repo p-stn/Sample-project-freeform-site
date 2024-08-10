@@ -70,7 +70,7 @@ export default function page() {
             </button>
           </div>
 
-          <div className="w-[616px] h-[311px] absolute bg-green-400 top-[150px] rounded-[8px] flex py-[15px] flex-col justify-between bg-[#F7F8FA] ">
+          <div className="w-[616px] h-[311px] absolute  top-[150px] rounded-[8px] flex py-[15px] flex-col justify-between bg-[#F7F8FA] ">
             <div className="px-[10px] flex  justify-between">
               <div></div>
 
